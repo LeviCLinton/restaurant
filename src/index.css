@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   TABLEFLOW DESIGN TOKENS
+   A restaurant's night kitchen: warm dark ink, brass fixtures, linen paper
+   tickets. Status colors map 1:1 to the operational states used across the
+   product (tables, orders, reservations) — never redefine a status color
+   locally in a component.
+   ========================================================================== */
+
+@theme {
+  /* ---- Type families -------------------------------------------------- */
+  --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* ---- Core palette ----------------------------------------------------
+     Named per the brief's hospitality/night-kitchen direction. Ink is the
+     primary dark surface (not pure black); paper is the primary light
+     surface (not a straight cream). Brass is the single brand accent. */
+  --color-ink-950: #14120d;
+  --color-ink-900: #1c1911;
+  --color-ink-800: #262117;
+  --color-ink-700: #362f21;
+  --color-ink-600: #4a4030;
+
+  --color-paper-50: #fbfaf6;
+  --color-paper-100: #f4f1e9;
+  --color-paper-200: #ece6d6;
+  --color-paper-300: #ddd4bc;
+
+  --color-slate-400: #9a9280;
+  --color-slate-500: #726a58;
+  --color-slate-600: #56503f;
+  --color-slate-700: #3d3829;
+
+  --color-brass-300: #dcbb7c;
+  --color-brass-400: #c9a05a;
+  --color-brass-500: #b1823e;
+  --color-brass-600: #906a33;
+  --color-brass-700: #6f512a;
+
+  /* ---- Status palette ---------------------------------------------------
+     One consistent meaning per hue, used everywhere: tables, orders,
+     reservations, kitchen tickets, forms. Do not repurpose. */
+  --color-status-available: #4f7a56;
+  --color-status-available-bg: #e7efe4;
+  --color-status-occupied: #b1823e;
+  --color-status-occupied-bg: #f5ecd9;
+  --color-status-reserved: #5f5789;
+  --color-status-reserved-bg: #ebe8f2;
+  --color-status-attention: #b23a2e;
+  --color-status-attention-bg: #f5e2de;
+  --color-status-preparing: #b1823e;
+  --color-status-preparing-bg: #f5ecd9;
+  --color-status-ready: #4f7a56;
+  --color-status-ready-bg: #e7efe4;
+  --color-status-completed: #726a58;
+  --color-status-completed-bg: #eeebe3;
+  --color-status-error: #a3271d;
+  --color-status-error-bg: #f6e0dd;
+  --color-status-warning: #96601a;
+  --color-status-warning-bg: #f6ecd8;
+  --color-status-success: #3f6b46;
+  --color-status-success-bg: #e3ede2;
+
+  /* ---- Radius: varies deliberately by component role -------------------
+     Inputs/buttons/tickets stay close to square; overlays get more ease. */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+
+  /* ---- Shadows: ink-tinted, never neutral grey -------------------------- */
+  --shadow-ambient: 0 1px 2px rgba(20, 18, 13, 0.05);
+  --shadow-card: 0 4px 16px -4px rgba(20, 18, 13, 0.10);
+  --shadow-raised: 0 16px 40px -12px rgba(20, 18, 13, 0.22);
+  --shadow-brass-glow: 0 0 0 1px rgba(177, 130, 62, 0.35), 0 8px 24px -8px rgba(177, 130, 62, 0.35);
+
+  /* ---- Motion ------------------------------------------------------------ */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --duration-slow: 280ms;
+
+  /* ---- Breakpoints (extend default scale with a fine mobile step) ------ */
+  --breakpoint-xs: 375px;
+}
+
+/* Reduced motion: kill non-essential motion globally. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-paper-50);
+    color: var(--color-ink-900);
+  }
+
+  ::selection {
+    background-color: var(--color-brass-300);
+    color: var(--color-ink-950);
+  }
+
+  /* Visible, consistent focus ring across every interactive element. */
+  :focus-visible {
+    outline: 2px solid var(--color-brass-500);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-slate-400);
+    border-radius: 999px;
+    border: 2px solid var(--color-paper-50);
+  }
+}
+
+@layer utilities {
+  .font-feature-tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
