@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /kitchen
+
+Sitemap: https://tableflow.example.com/sitemap.xml
