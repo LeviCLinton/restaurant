@@ -18,7 +18,7 @@ const METHODS: { id: PaymentMethod; label: string; icon: typeof CreditCard; help
 ];
 
 export function CheckoutPage() {
-  useSeo({ title: "Checkout", description: "Complete your order at Ember.", path: "/demo/order/checkout" });
+  useSeo({ title: "Checkout", description: "Complete your order at LCN Restaurant.", path: "/demo/order/checkout" });
 
   const cart = useCart();
   const { placeOrder } = useAppStore();
