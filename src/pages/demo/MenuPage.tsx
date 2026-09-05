@@ -9,8 +9,8 @@ import type { MenuItem } from "@/types";
 
 export function MenuPage() {
   useSeo({
-    title: "Order from Ember",
-    description: "Browse the menu at Ember and order straight from your table.",
+    title: "Order from LCN Restaurant",
+    description: "Browse the menu at LCN Restaurant and order straight from your table.",
     path: "/demo/order",
   });
 
