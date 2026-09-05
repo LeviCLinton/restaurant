@@ -26,7 +26,7 @@ function FeedbackForm({ orderId }: { orderId: string }) {
   if (submitted) {
     return (
       <div className="mt-6 rounded-[var(--radius-md)] border border-status-success/30 bg-status-success-bg px-4 py-3 text-center text-sm text-status-success">
-        Thanks for the feedback — it helps Ember improve.
+        Thanks for the feedback — it helps LCN Restaurant improve.
       </div>
     );
   }
