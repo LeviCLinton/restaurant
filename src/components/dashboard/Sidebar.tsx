@@ -46,13 +46,13 @@ export function Sidebar() {
             {item.label}
           </NavLink>
         ))}
-        <a
-          href="/kitchen"
+        <NavLink
+          to="/kitchen"
           className="mt-2 flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-paper-300 px-3 py-2.5 text-sm font-medium text-ink-800 hover:bg-paper-200"
         >
           <ChefHat className="size-4.5" aria-hidden="true" />
           Kitchen display
-        </a>
+        </NavLink>
       </nav>
       <div className="border-t border-paper-300 px-3 py-3">
         <NavLink
