@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { useSeo } from "@/hooks/useSeo";
 import { useAppStore } from "@/context/AppStoreContext";
 import { elapsedSince } from "@/lib/utils";
+import { restaurant } from "@/data";
 import type { Order, OrderStatus } from "@/types";
 
 const COLUMNS: { status: OrderStatus; label: string; next?: OrderStatus; action?: string }[] = [
@@ -61,7 +62,7 @@ function KitchenTicket({ order, onAdvance, actionLabel }: { order: Order; onAdva
 }
 
 export function KitchenPage() {
-  useSeo({ title: "Kitchen display", description: "Live kitchen order tickets at Ember.", path: "/kitchen" });
+  useSeo({ title: "Kitchen display", description: "Live kitchen order tickets at LCN Restaurant.", path: "/kitchen" });
 
   const { orders, setOrderStatus } = useAppStore();
 
@@ -71,7 +72,7 @@ export function KitchenPage() {
         <Link to="/dashboard" className="flex items-center gap-2 text-sm text-paper-200/70 hover:text-paper-50">
           <ArrowLeft className="size-4" /> Dashboard
         </Link>
-        <p className="font-display text-lg font-semibold text-paper-50">Ember — Kitchen</p>
+        <p className="font-display text-lg font-semibold text-paper-50">{restaurant.name} — Kitchen</p>
         <span className="text-xs text-paper-200/50">{new Date().toLocaleTimeString("en-KE", { hour: "2-digit", minute: "2-digit" })}</span>
       </header>
 
