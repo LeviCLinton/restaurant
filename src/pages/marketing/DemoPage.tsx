@@ -7,7 +7,7 @@ const MODES = [
     to: "/demo/order",
     icon: Smartphone,
     title: "Customer",
-    description: "Browse the menu at Ember, add items to a cart, and place an order from Table 14.",
+    description: "Browse the menu at LCN Restaurant, add items to a cart, and place an order from Table 14.",
   },
   {
     to: "/dashboard",
