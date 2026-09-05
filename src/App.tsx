@@ -49,7 +49,7 @@ export default function App() {
     <AppStoreProvider>
       <CartProvider>
         <ToastProvider>
-          <BrowserRouter>
+          <BrowserRouter basename="/restaurant">
             <Suspense fallback={<RouteFallback />}>
               <Routes>
                 {/* Marketing */}
