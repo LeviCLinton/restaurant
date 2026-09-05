@@ -23,7 +23,7 @@ export function SignupPage() {
   return (
     <AuthLayout title="Start free" subtitle="No card required. Set up your restaurant in minutes.">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <Input label="Restaurant name" required placeholder="e.g. Ember" />
+        <Input label="Restaurant name" required placeholder="e.g. LCN Restaurant" />
         <Input label="Email" type="email" required placeholder="you@restaurant.com" />
         <Input label="Password" type="password" required placeholder="••••••••" helperText="At least 8 characters" />
         <Button type="submit" fullWidth loading={loading}>
